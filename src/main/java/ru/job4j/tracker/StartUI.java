@@ -10,5 +10,6 @@ public class StartUI {
         String currentDateTimeFormatter = item.getCreated().format(formatter);
         System.out.println("Текущие дата и время после форматирования: "
                 + currentDateTimeFormatter);
+        System.out.println(item);
     }
 }
