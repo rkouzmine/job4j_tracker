@@ -10,9 +10,14 @@ public class StartUI {
             showMenu();
             System.out.print("Выбрать:");
             int select = Integer.parseInt(scanner.nextLine());
-            if (select != 6) {
-                System.out.println("Пользователь выбрать: " + select);
-            } else {
+            if (select == 0) {
+                System.out.println("===Создание новой заявки===");
+                System.out.print("Введите имя: ");
+                String name = scanner.nextLine();
+                Item item = new Item(name);
+                tracker.add(item);
+                System.out.println("Заявка добавлена: " + item);
+            } else if (select == 6) {
                 run = false;
             }
         }
@@ -24,6 +29,7 @@ public class StartUI {
                 "Удалить заявку", "Показать заявку по id", "Показать заявки по имени",
                 "Завершить программу"
         };
+        System.out.println("Меню:");
         for (int i = 0; i < menu.length; i++) {
             System.out.println(i + ". " + menu[i]);
         }
