@@ -42,7 +42,7 @@ public class StartUI {
                 }
             } else if (select == 3) {
                 System.out.println("===Удаление заявки");
-                System.out.println("Ведите id: ");
+                System.out.print("Ведите id: ");
                 int id = Integer.parseInt(scanner.nextLine());
                 Item item = tracker.findById(id);
                 tracker.delete(id);
