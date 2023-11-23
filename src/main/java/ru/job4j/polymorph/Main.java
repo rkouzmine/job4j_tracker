@@ -21,6 +21,7 @@ public class Main {
         sportCar.changeGear();
         sportCar.brake();
         sportCar.refill();
-
+        System.out.println();
+        Vehicle.getDragCoefficient();
     }
 }
