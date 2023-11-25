@@ -19,7 +19,6 @@ public class Airplane implements Vehicle {
 
     @Override
     public void move() {
-        String name;
         System.out.println(getClass().getSimpleName() + " " + getName() + " летает по воздуху.");
     }
 

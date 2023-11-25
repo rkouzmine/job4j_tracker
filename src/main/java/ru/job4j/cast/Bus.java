@@ -26,6 +26,6 @@ public class Bus implements Vehicle {
     @Override
     public void speed() {
         System.out.println(getClass().getSimpleName() + " " + getName()
-                + " может развить скорость до " + getSpeed() + "км/ч.");
+                + " может развить скорость до " + getSpeed() + " км/ч.");
     }
 }
