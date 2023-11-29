@@ -5,7 +5,7 @@ public class Count {
         if (start > finish) {
             throw new IllegalArgumentException("Start should be less than finish.");
         }
-        int result = 1;
+        int result = 0;
         for (int i = start; i != finish; i++) {
             result += i;
         }
@@ -13,6 +13,6 @@ public class Count {
     }
 
     public static void main(String[] args) {
-        System.out.println("Sum of 2 to 10 is : " + add(10, 2));
+        System.out.println("Sum of 2 to 10 is : " + add(2, 10));
     }
 }
