@@ -1,0 +1,16 @@
+package ru.job4j.ex;
+
+import java.util.Scanner;
+
+public class RectangleOperator extends ShapeOperator {
+    private Scanner input = new Scanner(System.in);
+
+    @Override
+    public Shape createShape() {
+        System.out.print("Введите ширину прямоугльника: ");
+        int a = Integer.parseInt(input.nextLine());
+        System.out.println("Введите длину прямоугольника: ");
+        int b = Integer.parseInt(input.nextLine());
+        return new Rectangle(a, b);
+    }
+}
