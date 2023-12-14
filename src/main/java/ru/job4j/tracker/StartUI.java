@@ -47,5 +47,6 @@ public class StartUI {
                 new FindByName(output),
                 new Exit(output)
         );
+        new StartUI(output).init(input, tracker, actions);
     }
 }
