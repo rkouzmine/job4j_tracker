@@ -10,9 +10,11 @@ public class UniqueText {
         HashSet<String> check = new HashSet<>();
         for (String original : origin) {
             check.add(original);
-            for (String texts : text) {
-               result = check.contains(texts);
-               break;
+        }
+        for (String texts : text) {
+            if (!check.contains(texts)) {
+                result = false;
+                break;
             }
         }
         return result;
