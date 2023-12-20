@@ -18,13 +18,11 @@ public class AnalyzeByMap {
     public static List<Label> averageScoreByPupil(List<Pupil> pupils) {
         List<Label> result = new ArrayList<>();
         for (Pupil pupil : pupils) {
-            int count = 0;
             int points = 0;
             for (Subject subject : pupil.subjects()) {
-                count++;
                 points += subject.score();
             }
-            result.add(new Label(pupil.name(), (double) points / count));
+            result.add(new Label(pupil.name(), (double) points / pupils.size()));
         }
         return result;
     }
@@ -32,16 +30,13 @@ public class AnalyzeByMap {
     public static List<Label> averageScoreBySubject(List<Pupil> pupils) {
         Map<String, Integer> map = new LinkedHashMap<>();
         List<Label> subjects = new ArrayList<>();
-        int count = 0;
         for (Pupil pupil : pupils) {
-            count++;
             for (Subject subject : pupil.subjects()) {
-                int points = map.getOrDefault(subject.name(), 0);
-                map.put(subject.name(), points + subject.score());
+                map.put(subject.name(), map.getOrDefault(subject.name(), 0) + subject.score());
             }
         }
         for (String key : map.keySet()) {
-            subjects.add(new Label(key, ((double) map.get(key)) / count));
+            subjects.add(new Label(key, ((double) map.get(key)) / pupils.size()));
         }
         return subjects;
     }
@@ -60,8 +55,7 @@ public class AnalyzeByMap {
         for (String key : map.keySet()) {
             labels.add(new Label(key, map.get(key)));
         }
-        labels.sort(Comparator.naturalOrder());
-        return labels.get(labels.size() - 1);
+        return Collections.max(labels);
     }
 
     public static Label bestSubject(List<Pupil> pupils) {
@@ -69,14 +63,12 @@ public class AnalyzeByMap {
         List<Label> labels = new ArrayList<>();
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                int points = map.getOrDefault(subject.name(), 0);
-                map.put(subject.name(), points + subject.score());
+                map.put(subject.name(), map.getOrDefault(subject.name(), 0) + subject.score());
             }
         }
         for (String key : map.keySet()) {
             labels.add(new Label(key, map.get(key)));
         }
-        labels.sort(Comparator.naturalOrder());
-        return labels.get(labels.size() - 1);
+        return Collections.max(labels);
     }
 }
