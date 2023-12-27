@@ -21,7 +21,10 @@ public class FI {
 
         Comparator<String> comparatorSize = (left, right) ->
                 Integer.compare(left.length(), right.length());
+
         Comparator<String> comparatorText = (left, right) -> left.compareTo(right);
-        Comparator<String> comparatorDescSize = (left, right) -> right.compareTo(left);
+
+        Comparator<String> comparatorDescSize = (left, right) ->
+                Integer.compare(right.length(), left.length());
     }
 }
