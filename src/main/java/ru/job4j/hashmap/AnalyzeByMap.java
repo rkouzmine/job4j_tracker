@@ -32,7 +32,7 @@ public class AnalyzeByMap {
         List<Label> subjects = new ArrayList<>();
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                map.put(subject.name(), map.getOrDefault(subject.name(), 0) + subject.score());
+                map.merge(subject.name(), subject.score(), Integer::sum);
             }
         }
         for (String key : map.keySet()) {
@@ -44,13 +44,10 @@ public class AnalyzeByMap {
     public static Label bestStudent(List<Pupil> pupils) {
         Map<String, Integer> map = new LinkedHashMap<>();
         List<Label> labels = new ArrayList<>();
-        int points = 0;
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                points += subject.score();
+                map.merge(pupil.name(), subject.score(), Integer::sum);
             }
-            map.put(pupil.name(), points);
-            points = 0;
         }
         for (String key : map.keySet()) {
             labels.add(new Label(key, map.get(key)));
