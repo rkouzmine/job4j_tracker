@@ -10,7 +10,7 @@ class PhoneDictionaryTest {
 
     @Test
     void whenFindByName() {
-        PhoneDictionary phone = new PhoneDictionary();
+        var phone = new PhoneDictionary();
         phone.add(
                 new Person("Petr", "Arsentev", "534872", "Bryansk")
         );
@@ -20,7 +20,7 @@ class PhoneDictionaryTest {
 
     @Test
     void whenFindBySurname() {
-        PhoneDictionary phone = new PhoneDictionary();
+        var phone = new PhoneDictionary();
         phone.add(
                 new Person("Ruslan", "Kuzmin", "812585", "Saint-Petersburg")
         );
@@ -30,7 +30,7 @@ class PhoneDictionaryTest {
 
     @Test
     void whenFindByPhone() {
-        PhoneDictionary phone = new PhoneDictionary();
+        var phone = new PhoneDictionary();
         phone.add(
                 new Person("Ruslan", "Kuzmin", "812585", "Saint-Petersburg")
         );
@@ -40,7 +40,7 @@ class PhoneDictionaryTest {
 
     @Test
     void whenFindByAddress() {
-        PhoneDictionary phone = new PhoneDictionary();
+        var phone = new PhoneDictionary();
         phone.add(
                 new Person("Ruslan", "Kuzmin", "812585", "Saint-Petersburg")
         );
