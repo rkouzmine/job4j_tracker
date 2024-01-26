@@ -73,7 +73,6 @@ class AnalyzeByMapTest {
         ));
     }
 
-    @Disabled
     @Test
     public void whenListOfSubjectAverage() {
         List<Tuple> average = Analyze.averageScoreBySubject(
