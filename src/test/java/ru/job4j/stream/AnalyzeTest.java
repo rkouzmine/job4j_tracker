@@ -108,7 +108,6 @@ class AnalyzeByMapTest {
         ));
     }
 
-    @Disabled
     @Test
     public void whenBestPupil() {
         Tuple best = Analyze.bestStudent(
