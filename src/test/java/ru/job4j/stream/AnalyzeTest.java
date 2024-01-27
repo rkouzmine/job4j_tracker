@@ -137,7 +137,6 @@ class AnalyzeByMapTest {
         assertThat(best).isEqualTo(new Tuple("Ivanov", 240D));
     }
 
-    @Disabled
     @Test
     public void whenBestSubject() {
         Tuple best = Analyze.bestSubject(
