@@ -5,8 +5,8 @@ import java.util.Set;
 
 public class Pangram {
     public static boolean checkString(String s) {
-        s = s.toLowerCase();
-        String str = s.replaceAll(" ", "");
+        String str = s.toLowerCase();
+        str = s.replaceAll(" ", "");
         char[] chars = str.toCharArray();
         Set<Character> set = new HashSet<>();
         for (Character character : chars) {
