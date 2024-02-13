@@ -7,9 +7,9 @@ public class Task11 {
     private Deque<Integer> deque = new LinkedList<>();
 
     public Deque<Integer> init() {
-        deque.addFirst(1);
-        deque.addFirst(2);
-        deque.addFirst(3);
+        for (int i = 1; i <= 3; i++) {
+            deque.addFirst(i);
+        }
         return deque;
     }
 }
