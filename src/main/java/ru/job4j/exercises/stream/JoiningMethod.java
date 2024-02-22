@@ -8,4 +8,8 @@ public class JoiningMethod {
         return strings.stream()
                 .collect(Collectors.joining(System.lineSeparator(), "Prefix", "Suffix"));
     }
+
+    public static void main(String[] args) {
+        System.out.println(join(List.of("A", "B", "C")));
+    }
 }
