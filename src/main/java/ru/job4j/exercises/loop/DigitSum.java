@@ -2,9 +2,10 @@ package ru.job4j.exercises.loop;
 
 public class DigitSum {
     public static int sum(int num) {
-        return String.valueOf(num)
-                .chars()
-                .map(i -> i - '0')
-                .sum();
+        int sum = 0;
+        for (; num > 0; num /= 10) {
+            sum += num % 10;
+        }
+        return sum;
     }
 }
