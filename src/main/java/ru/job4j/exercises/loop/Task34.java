@@ -5,14 +5,13 @@ import java.util.StringJoiner;
 public class Task34 {
     public static void loop(int num) {
         StringJoiner stringJoiner = new StringJoiner(" ");
-        int count = 0;
-        for (int i = num + 1; ; i++) {
-            if (i % 2 != 0) {
-                count++;
-                stringJoiner.add(String.valueOf(i));
-            } else if (count == 5) {
-                break;
-            }
+        int start = num + 1;
+        if (start % 2 == 0) {
+            start++;
+        }
+        for (int i = 0; i < 5; i++) {
+            stringJoiner.add(String.valueOf(start));
+            start += 2;
         }
         System.out.println(stringJoiner);
     }
