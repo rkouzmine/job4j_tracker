@@ -7,7 +7,7 @@ public class Task34 {
         StringJoiner stringJoiner = new StringJoiner(" ");
         int count = 0;
         for (int i = num + 1; ; i++) {
-            if (i % 2 == 1) {
+            if (i % 2 != 0) {
                 count++;
                 stringJoiner.add(String.valueOf(i));
             } else if (count == 5) {
