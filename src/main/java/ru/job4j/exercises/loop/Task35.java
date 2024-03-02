@@ -5,10 +5,9 @@ import java.util.StringJoiner;
 public class Task35 {
     public static void loop(int num) {
         StringJoiner stringJoiner = new StringJoiner(" ");
-        int start = num;
         for (int i = 0; i < 5; i++) {
-            start -= 6;
-            stringJoiner.add(String.valueOf(start));
+            num -= 6;
+            stringJoiner.add(String.valueOf(num));
         }
         System.out.println(stringJoiner);
     }
