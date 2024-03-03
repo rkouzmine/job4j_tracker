@@ -6,8 +6,7 @@ public class Task45 {
     public static void loop(int num) {
         StringJoiner stringJoiner = new StringJoiner(" ");
         for (int i = 100; i <= 500; i++) {
-            String number = String.valueOf(num);
-            if (String.valueOf(i).indexOf(number) > 0) {
+            if (i % 100 == num) {
                 stringJoiner.add(String.valueOf(i));
             }
         }
