@@ -6,16 +6,32 @@ public class Task64 {
         int spring = 0;
         int summer = 0;
         int fall = 0;
+
         for (Integer num : months) {
-           if (num >= 3 && num <= 5) {
-               spring++;
-           } else if (num >= 6 && num <= 8) {
-               summer++;
-           } else if (num >= 9 && num <= 11) {
-               fall++;
-           } else {
-               winter++;
-           }
+            switch (num) {
+                case 12:
+                case 1:
+                case 2:
+                    winter++;
+                    break;
+                case 3:
+                case 4:
+                case 5:
+                    spring++;
+                    break;
+                case 6:
+                case 7:
+                case 8:
+                    summer++;
+                    break;
+                case 9:
+                case 10:
+                case 11:
+                    fall++;
+                    break;
+                default:
+                    System.out.println("Not a Month");
+            }
         }
         System.out.println(
                 "Зимой: " + winter
