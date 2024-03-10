@@ -1,25 +1,20 @@
 package ru.job4j.exercises.loop;
 
 public class Task67 {
-    public static void loop(int num) {
-        String rsl = "Да";
-        if (num <= 1) {
-            System.out.println("Нет");
-            return;
+    public static boolean isPrime(int number) {
+        if (number <= 1) {
+            return false; // числа 0 и 1 не являются простыми
         }
-
-        for (int i = 2; i * i <= num; i++) {
-            rsl = num % i == 0 ? "Нет" : "Да";
-            break;
+        for (int i = 2; i * i <= number; i++) {
+            if (number % i == 0) {
+                return false; // если делится без остатка нацело, то не является простым
+            }
         }
-        System.out.println(rsl);
+        return true; // если после проверки все циклы пройдены успешно, то число простое
     }
 
     public static void main(String[] args) {
-        loop(7);
-        loop(12);
-        loop(10);
-        loop(1);
-        loop(2);
+        boolean rsl = isPrime(17);
+        System.out.println(rsl);
     }
 }
