@@ -1,20 +1,22 @@
 package ru.job4j.exercises.array;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.StringJoiner;
 
 public class Task78 {
     public static void array(int[] nums) {
         StringJoiner sj = new StringJoiner(" ");
+        Map<Integer, Integer> map = new LinkedHashMap<>();
 
         for (int i = 0; i < nums.length; i++) {
-            int count = 0;
-            for (int j = 0; j < nums.length; j++) {
-                if (nums[i] == nums[j]) {
-                    count++;
-                }
-            }
-            if (count == 1) {
-                sj.add(String.valueOf(nums[i]));
+            int count = map.getOrDefault(nums[i], 0);
+            map.put(nums[i], count + 1);
+        }
+
+        for (Map.Entry<Integer, Integer> integer : map.entrySet()) {
+            if (integer.getValue() == 1) {
+                sj.add(String.valueOf(integer.getKey()));
             }
         }
         System.out.println(sj);
