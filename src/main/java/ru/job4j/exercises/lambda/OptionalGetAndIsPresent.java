@@ -13,10 +13,9 @@ public class OptionalGetAndIsPresent {
         for (int i = 0; i < data.length; i++) {
             if (data[i] == el) {
                 index = i;
-                return Optional.of(index);
             }
         }
-        return Optional.empty();
+        return index != -1 ? Optional.of(index) : Optional.empty();
     }
 
     public static void main(String[] args) {
