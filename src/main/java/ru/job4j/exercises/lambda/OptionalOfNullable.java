@@ -10,7 +10,7 @@ public class OptionalOfNullable {
     }
 
     public static void main(String[] args) {
-        findValue(Arrays.asList("a", "b", "c"), "c");
-        findValue(Arrays.asList("a", "b", null), null);
+        System.out.println(findValue(Arrays.asList("a", "b", "c"), "c"));
+        System.out.println(findValue(Arrays.asList("a", "b", null), null));
     }
 }
