@@ -2,22 +2,23 @@ package ru.job4j.exercises.type;
 
 public class Task38 {
     public static void leftShift(int number) {
-        int num1, num2, num3;
-        num1 = number % 10;
+        int num1 = number % 10;
         number /= 10;
-        num2 = number % 10;
+        int num2 = number % 10;
         number /= 10;
-        num3 = number % 10;
+        int num3 = number % 10;
 
+        StringBuilder result = new StringBuilder();
         if (num3 != 0) {
-            System.out.println(num3 + "" + num2 + "" + num1 + "" + 0);
+            result.append(num3).append(num2).append(num1).append(0);
         } else if (num2 != 0) {
-            System.out.println(num2 + "" + num1 + "" + 0);
+            result.append(num2).append(num1).append(0);
         } else if (num1 != 0) {
-            System.out.println(num1 + "" + 0);
+            result.append(num1).append(0);
         } else {
-            System.out.println(0);
+            result.append(0);
         }
+        System.out.println(result);
     }
 
     public static void main(String[] args) {
