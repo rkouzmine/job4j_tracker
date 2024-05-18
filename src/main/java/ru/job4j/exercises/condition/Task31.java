@@ -1,7 +1,5 @@
 package ru.job4j.exercises.condition;
 
-import java.util.Comparator;
-
 public class Task31 {
     public static void numCompare(int num1, int num2) {
         int min = Math.min(num1, num2);
