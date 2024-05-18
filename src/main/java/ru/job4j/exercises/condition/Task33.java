@@ -1,4 +1,4 @@
-package ru.job4j.exercises.type;
+package ru.job4j.exercises.condition;
 
 public class Task33 {
     public static void numSquare(int number) {
@@ -7,5 +7,12 @@ public class Task33 {
         } else {
             System.out.println("Ошибка");
         }
+    }
+
+    public static void main(String[] args) {
+        numSquare(1);
+        numSquare(0);
+        numSquare(-1);
+        numSquare(-4);
     }
 }
