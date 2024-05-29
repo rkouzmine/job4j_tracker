@@ -5,13 +5,9 @@ import java.util.Arrays;
 public class NumberToArray {
     public static int[] resolve(int number) {
         String strNum = String.valueOf(number);
-        int[] array = new int[strNum.length()];
-        int index = 0;
-        for (int i = strNum.length() - 1; i >= 0; i--) {
-            array[index++] = Character.getNumericValue(strNum.charAt(i));
-
-        }
-        return array;
+        return strNum.chars()
+                .map(Character::getNumericValue)
+                .toArray();
     }
 
     public static void main(String[] args) {
