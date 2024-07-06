@@ -4,13 +4,12 @@ import java.util.*;
 
 public class Dictionary {
     public static Map<String, List<String>> collectData(String[] strings) {
-        Map<String, List<String>> rsl = new HashMap<>();
+        Map<String, List<String>> result = new HashMap<>();
         for (String str : strings) {
-            String s = String.valueOf(str.charAt(0));
-            rsl.put(s, Arrays.stream(strings)
-                    .filter(x -> x.startsWith(s))
-                    .toList());
+            String key = String.valueOf(str.charAt(0));
+            result.putIfAbsent(key, new ArrayList<>());
+            result.get(key).add(str);
         }
-        return rsl;
+        return result;
     }
 }
