@@ -1,20 +1,18 @@
 package ru.job4j.exercises.array;
 
+import java.util.*;
+
 public class Task76 {
     public static void array(int[] arr) {
-        int count5 = 0, count4 = 0, count3 = 0, count2 = 0, count1 = 0;
-        for (int num : arr) {
-            switch (num) {
-                case 1 -> count1++;
-                case 2 -> count2++;
-                case 3 -> count3++;
-                case 4 -> count4++;
-                case 5 -> count5++;
-                default -> {
-                }
-            }
+        StringJoiner sj = new StringJoiner(", ");
+        Map<Integer, Integer> map = new TreeMap<>(Comparator.reverseOrder());
+        for (int i = 1; i <= 5; i++) {
+            map.put(i, 0);
         }
-        System.out.printf("5: %d, 4: %d, 3: %d, 2: %d, 1: %d\n",
-                count5, count4, count3, count2, count1);
+        for (int num : arr) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+        map.forEach((k, v) -> sj.add(k + ": " + v));
+        System.out.println(sj);
     }
 }
