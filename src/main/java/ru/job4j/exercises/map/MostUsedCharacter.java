@@ -11,11 +11,11 @@ public class MostUsedCharacter {
             map.computeIfPresent(ch, (k, v) -> v + 1);
         }
         char rsl = ' ';
-        int max = 0;
+        Integer maxValue = Collections.max(map.values());
         for (Map.Entry<Character, Integer> entry : map.entrySet()) {
-            if (entry.getValue() > max) {
-                max = entry.getValue();
+            if (entry.getValue().equals(maxValue)) {
                 rsl = entry.getKey();
+                break;
             }
         }
         return rsl;
