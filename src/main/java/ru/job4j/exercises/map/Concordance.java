@@ -18,4 +18,11 @@ public class Concordance {
         }
         return map;
     }
+
+    public static void main(String[] args) {
+        String strFirst = "Hello World";
+        String strSecond = "Hello Java";
+        System.out.println(collectCharacters(strFirst));
+        System.out.println(collectCharacters(strSecond));
+    }
 }
