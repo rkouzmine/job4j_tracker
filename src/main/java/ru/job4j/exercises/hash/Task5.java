@@ -20,5 +20,6 @@ public class Task5 {
         return list;
     }
 
-    public record Task(Integer taskId, Integer assignId) {}
+    public record Task(Integer taskId, Integer assignId) {
+    }
 }
