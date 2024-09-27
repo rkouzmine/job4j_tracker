@@ -13,7 +13,7 @@ public class Task49 {
                 sj.add(String.valueOf(i));
             }
         }
-        System.out.println(sj);
+        System.out.println(sj.toString());
     }
 
     public static void main(String[] args) {
