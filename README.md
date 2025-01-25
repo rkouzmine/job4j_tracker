@@ -1,6 +1,4 @@
-# job4j_tracker
-
-## О проекте
+# Job4j_tracker
 
 ![CI GitHubAction](https://github.com/rkouzmine/job4j_tracker/actions/workflows/maven.yml/badge.svg)
 
