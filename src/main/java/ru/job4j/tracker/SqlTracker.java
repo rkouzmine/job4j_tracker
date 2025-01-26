@@ -53,7 +53,6 @@ public class SqlTracker implements Store {
                 if (generatedKeys.next()) {
                     item.setId(generatedKeys.getInt(1));
                 }
-
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -114,7 +113,6 @@ public class SqlTracker implements Store {
                     items.add(createItem(resultSet));
                 }
             }
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
