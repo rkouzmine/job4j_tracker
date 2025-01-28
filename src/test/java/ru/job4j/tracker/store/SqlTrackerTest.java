@@ -78,6 +78,22 @@ public class SqlTrackerTest {
     }
 
     @Test
+    public void whenOneRecordIsDeletedTheEntireTableIsNotCleared() {
+        SqlTracker tracker = new SqlTracker(connection);
+        List<Item> items = new ArrayList<>();
+        Item itemFirst = new Item("itemFirst");
+        Item itemSecond = new Item("itemSecond");
+        Item itemThird = new Item("itemThird");
+        tracker.add(itemFirst);
+        tracker.add(itemSecond);
+        tracker.add(itemThird);
+        items.add(itemFirst);
+        items.add(itemSecond);
+        tracker.delete(itemThird.getId());
+        assertThat(tracker.findAll()).isEqualTo(items);
+    }
+
+    @Test
     public void whenFindAllThenReturnAllItems() {
         SqlTracker tracker = new SqlTracker(connection);
         List<Item> items = new ArrayList<>();
